@@ -104,6 +104,25 @@ class LinkedList:
             curr_node = next_node
         self.head = prev_node
 
+    def delete(self, index):
+        
+        if index<0 and index>self.length():
+            raise "Invalid Error"
+            
+        if  index==0:
+            self.head = self.head.next 
+            return
+        
+        count = 0
+        itr = self.head 
+        while itr:
+            if count == index-1:
+                itr.next = itr.next.next 
+                break
+            itr = itr.next 
+            count+=1
+        
+        
    
 
        
@@ -125,6 +144,7 @@ if __name__ == "__main__":
     ll.show(4)
     ll.reverse()
     ll.length()
+    ll.delete(1)
     print(ll)
     ll.printlist()
     
