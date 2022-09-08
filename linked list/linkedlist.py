@@ -77,6 +77,33 @@ class LinkedList:
             count+=1
         mid = count//2
         self.insert_at( mid,data)
+
+    #Show Specific Element in list 
+    def show(self, index):
+        count = 0
+        itr = self.head 
+        while itr:
+            if count == index:
+                print(itr.data)
+            itr = itr.next
+            count +=1
+        return None
+
+    # Reverse the Linked List
+    def reverse(self):
+        itr = self.head 
+        if itr is None:
+            return 
+        curr_node = self.head 
+        prev_node = None
+
+        while curr_node:
+            next_node = curr_node.next 
+            curr_node.next = prev_node
+            prev_node = curr_node
+            curr_node = next_node
+        self.head = prev_node
+
        
             
             
@@ -93,7 +120,8 @@ if __name__ == "__main__":
     ll.insert_at(0,0)
     ll.insert_at(1,12)
     ll.insert_at_mid(111)
-    
+    ll.show(4)
+    ll.reverse()
     ll.length()
     print(ll)
     ll.printlist()
