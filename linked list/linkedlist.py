@@ -104,6 +104,7 @@ class LinkedList:
             curr_node = next_node
         self.head = prev_node
 
+    # Delete a number in a specific location in a Linked List
     def delete(self, index):
         
         if index<0 and index>self.length():
@@ -135,6 +136,19 @@ class LinkedList:
             else:
                 temp = temp.next 
         return temp
+
+    # Floyd Algorithim  -----For Detect Loop in a Linked List
+    def detectloop(self, head):
+        fast = self.head
+        slow = self.head
+        while fast!=None and fast.next!=None:
+            slow = slow.next 
+            fast = fast.next.next 
+            if fast==slow:
+                return True #Loop
+        return False   #No Loop
+        
+
         
 
        
