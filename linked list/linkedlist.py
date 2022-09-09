@@ -122,8 +122,20 @@ class LinkedList:
             itr = itr.next 
             count+=1
         
+    # Remove Duplicates in a Linked List
+    def duplicates(self):
+        if self.head == None or self.head.next == None:
+            return "Invalid Index"
+        temp = self.head
+        while temp.next:
+            if temp.data == temp.next.data:
+                Del = temp.next 
+                temp.next =  Del.next
+                del Del 
+            else:
+                temp = temp.next 
+        return temp
         
-   
 
        
             
@@ -132,6 +144,7 @@ class LinkedList:
         
 if __name__ == "__main__":
     ll = LinkedList()
+    ll.insert_at_beginning(10)
     ll.insert_at_beginning(10)
     ll.insert_at_beginning(100)
     ll.insert_at_beginning(5)
@@ -146,6 +159,7 @@ if __name__ == "__main__":
     ll.length()
     ll.delete(1)
     print(ll)
+    ll.duplicates()
     ll.printlist()
     
     
