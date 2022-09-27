@@ -51,16 +51,26 @@ def towerofhanoi(n, source, destination,helper):
 
 # Generate Permutation
 def generatepermutation(str):
-    def swap()
-
+    def swap(i, j, s):
+        arr = list(s)
+        arr[i], arr[j]=arr[j], arr[i]
+        s=""
+        for i in arr:
+            s+=i 
+        return s
 
     def helper(pos, str, ans, n):
         if pos>=len(str):
             ans.append(str[:])
             return 
-    for i in range(pos, len(str)):
-        str = swap(pos, i, str)
-        helper(pos+1, str)
+        for i in range(pos, len(str)):
+            str = swap(pos, i, str)
+            helper(pos+1, str, ans, n)
+            str = swap(pos, i, str)
+    ans = []
+    n = len(str)
+    helper(0, str, ans, n)
+    return sorted(ans)
 
 
-    
+print(generatepermutation('abc'))
