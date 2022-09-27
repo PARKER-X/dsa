@@ -71,6 +71,7 @@ def generatepermutation(str):
     n = len(str)
     helper(0, str, ans, n)
     return sorted(ans)
+    
 
 
 print(generatepermutation('abc'))
