@@ -33,6 +33,34 @@ def powerset2(s):
         for j in range(i):
             lists.append(s[j:i])
     return lists 
-print(powerset2([1,2,3]))
+# print(powerset2([1,2,3]))
 
 
+
+
+# Tower Of hanoi
+def towerofhanoi(n, source, destination,helper):
+    if n==1:
+        print("Move disc1 from pole", source, "to" , destination)
+        return
+    towerofhanoi(n-1, source, helper, destination)
+    print("Move disc", n, "from pole", source, "to pole", destination)
+    towerofhanoi(n-1,helper, destination, source )
+
+# print(towerofhanoi(2,'A','B','C'))
+
+# Generate Permutation
+def generatepermutation(str):
+    def swap()
+
+
+    def helper(pos, str, ans, n):
+        if pos>=len(str):
+            ans.append(str[:])
+            return 
+    for i in range(pos, len(str)):
+        str = swap(pos, i, str)
+        helper(pos+1, str)
+
+
+    
