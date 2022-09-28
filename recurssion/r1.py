@@ -74,4 +74,4 @@ def generatepermutation(str):
     
 
 
-print(generatepermutation('abc'))
+print(generatepermutation('abc')) 
