@@ -73,5 +73,5 @@ def generatepermutation(str):
     return sorted(ans)
     
 
-
+ 
 print(generatepermutation('abc')) 
